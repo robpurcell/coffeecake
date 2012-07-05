@@ -1,0 +1,4 @@
+coffeecake
+==========
+
+CoffeeScript and Grails
