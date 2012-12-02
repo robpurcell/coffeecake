@@ -15,6 +15,9 @@ grails.project.dependency.resolution = {
     log "error" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
     checksums true // Whether to verify checksums on resolve
 
+    def gebVersion = "0.7.2"
+    def seleniumVersion = "2.25.0"
+
     repositories {
         inherits true // Whether to inherit repository definitions from plugins
 
@@ -32,26 +35,31 @@ grails.project.dependency.resolution = {
         //mavenRepo "http://repository.jboss.com/maven2/"
     }
     dependencies {
-        // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
-
-        // runtime 'mysql:mysql-connector-java:5.1.20'
         compile "org.scala-lang:scala-library:2.9.2"
+
+        test("org.seleniumhq.selenium:selenium-htmlunit-driver:$seleniumVersion") {
+            exclude "xml-apis"
+        }
+
+        test("org.seleniumhq.selenium:selenium-firefox-driver:$seleniumVersion")
+        test("org.seleniumhq.selenium:selenium-support:$seleniumVersion")
+
+        test "org.codehaus.geb:geb-spock:$gebVersion"
     }
 
     plugins {
+        compile ':cache:1.0.0'
+        compile ":coffeescript-resources:0.3.2"
+        compile ":twitter-bootstrap:2.2.1"
+
+        runtime ":database-migration:1.1"
         runtime ":hibernate:$grailsVersion"
         runtime ":jquery:1.7.2"
-        runtime ":resources:1.1.6"
-
-        // Uncomment these (or add new ones) to enable additional resources capabilities
-        //runtime ":zipped-resources:1.0"
-        //runtime ":cached-resources:1.0"
-        //runtime ":yui-minify-resources:0.1.4"
+        runtime ":resources:1.2.RC2"
 
         build ":tomcat:$grailsVersion"
 
-        runtime ":database-migration:1.1"
-
-        compile ':cache:1.0.0'
+        test ":geb:$gebVersion"
+        test ":spock:0.7"
     }
 }
