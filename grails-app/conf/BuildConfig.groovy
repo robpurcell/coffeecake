@@ -12,7 +12,7 @@ grails.project.dependency.resolution = {
         // specify dependency exclusions here; for example, uncomment this to disable ehcache:
         // excludes 'ehcache'
     }
-    log "error" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
+    log "warn" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
     checksums true // Whether to verify checksums on resolve
 
     def gebVersion = "0.7.2"
@@ -35,8 +35,6 @@ grails.project.dependency.resolution = {
         //mavenRepo "http://repository.jboss.com/maven2/"
     }
     dependencies {
-        compile "org.scala-lang:scala-library:2.9.2"
-
         test("org.seleniumhq.selenium:selenium-htmlunit-driver:$seleniumVersion") {
             exclude "xml-apis"
         }
@@ -48,14 +46,19 @@ grails.project.dependency.resolution = {
     }
 
     plugins {
-        compile ':cache:1.0.0'
-        compile ":coffeescript-resources:0.3.2"
-        compile ":twitter-bootstrap:2.2.1"
+        compile ":scala:0.6.4"
+        compile ":angularjs-resources:1.0.3.rob"
+        compile ":lesscss-resources:1.3.0.3"
+        compile ":coffeescript-resources:1.4.0"
+        compile ":twitter-bootstrap:2.2.2"
+        compile ":cache-headers:1.1.5"
 
-        runtime ":database-migration:1.1"
+//        runtime ":database-migration:1.1"
         runtime ":hibernate:$grailsVersion"
-        runtime ":jquery:1.7.2"
-        runtime ":resources:1.2.RC2"
+        runtime ":jquery:1.8.3"
+        //runtime ":resources:1.1.6"
+        runtime ":zipped-resources:1.0"
+        runtime ":cached-resources:1.0"
 
         build ":tomcat:$grailsVersion"
 

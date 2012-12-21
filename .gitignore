@@ -1,1 +1,6 @@
 /target
+/out
+
+*.zip
+
+*.zip
