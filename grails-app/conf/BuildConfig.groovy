@@ -43,6 +43,7 @@ grails.project.dependency.resolution = {
         test("org.seleniumhq.selenium:selenium-support:$seleniumVersion")
 
         test "org.codehaus.geb:geb-spock:$gebVersion"
+        test "org.spockframework:spock-grails-support:0.7-groovy-2.0"
     }
 
     plugins {
@@ -63,6 +64,8 @@ grails.project.dependency.resolution = {
         build ":tomcat:$grailsVersion"
 
         test ":geb:$gebVersion"
-        test ":spock:0.7"
+        test(":spock:0.7") {
+            exclude "spock-grails-support"
+        }
     }
 }
