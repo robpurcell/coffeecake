@@ -34,6 +34,8 @@ grails.mime.types = [
 
 // What URL patterns should be processed by the resources plugin
 grails.resources.adhoc.patterns = ['/images/*', '/css/*', '/js/*', '/plugins/*']
+//grails.resources.debug = true
+
 
 // The default codec used to encode data with ${}
 grails.views.default.codec = "none" // none, html, base64
@@ -58,6 +60,10 @@ grails.exceptionresolver.params.exclude = ['password']
 
 // configure auto-caching of queries by default (if false you can cache individual queries with 'cache: true')
 grails.hibernate.cache.queries = false
+
+// Bootstrap config
+grails.plugins.twitterbootstrap.fixtaglib = true
+//grails.plugins.twitterbootstrap.defaultBundle = false
 
 environments {
     development {
@@ -96,4 +102,5 @@ log4j = {
           'org.apache.jasper.compiler.JspRuntimeContext'
 
     debug 'resourceMappers.CoffeeScriptResourceMapper'
+    debug 'grails.plugins.twitterbootstrap'
 }

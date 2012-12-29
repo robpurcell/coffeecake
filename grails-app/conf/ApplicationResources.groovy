@@ -4,7 +4,7 @@ modules = {
     }
 
     app {
-        dependsOn 'jquery, coffee, bootstrap'
+        dependsOn 'jquery, coffee, bootstrap, bootstrap-responsive-css'
         resource url: 'css/app.css'
     }
 

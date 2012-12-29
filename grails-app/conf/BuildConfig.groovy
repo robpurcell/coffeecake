@@ -59,7 +59,7 @@ grails.project.dependency.resolution = {
         runtime ":jquery:1.8.3"
         //runtime ":resources:1.1.6"
         runtime ":zipped-resources:1.0"
-        runtime ":cached-resources:1.0"
+//        runtime ":cached-resources:1.0"
 
         build ":tomcat:$grailsVersion"
 
