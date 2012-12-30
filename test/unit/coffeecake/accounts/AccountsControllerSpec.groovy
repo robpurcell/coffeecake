@@ -1,9 +1,7 @@
 package coffeecake.accounts
 
-
-
+import com.robbyp.coffeecake.AccountsController
 import grails.test.mixin.*
-import org.junit.*
 
 /**
  * See the API for {@link grails.test.mixin.web.ControllerUnitTestMixin} for usage instructions

@@ -1,4 +1,4 @@
-package coffeecake.home
+package com.robbyp.coffeecake
 
 class HomeController {
 
